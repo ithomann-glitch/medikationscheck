@@ -87,7 +87,7 @@
   });
 
   /* ---------- Scroll-reveal for the problem section ---------- */
-  var revealTargets = document.querySelectorAll('.painpoints, .problem-visual');
+  var revealTargets = document.querySelectorAll('.problem-intro');
   if ('IntersectionObserver' in window && revealTargets.length) {
     var revealObserver = new IntersectionObserver(function (entries, obs) {
       entries.forEach(function (entry) {
