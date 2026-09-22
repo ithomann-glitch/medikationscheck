@@ -24,6 +24,27 @@
     });
   });
 
+  /* ---------- Precise anchor scrolling ---------- */
+  // CSS scroll-padding-top uses a fixed guess at the header height, which
+  // drifts whenever the header wraps to a taller layout (narrow viewports,
+  // font loading, zoom) - the anchor then lands partly under the sticky
+  // header or short/past the section. Computing the offset from the
+  // header's real, current height on every click keeps every anchor
+  // pixel-accurate to the section it points at.
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var id = link.getAttribute('href').slice(1);
+      if (!id) return;
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      var offset = header.getBoundingClientRect().height + 16;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+      if (history.pushState) history.pushState(null, '', '#' + id);
+    });
+  });
+
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll('.faq-question').forEach(function (btn) {
     btn.addEventListener('click', function () {
