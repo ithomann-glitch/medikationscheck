@@ -28,7 +28,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body {
   margin: 0;
@@ -340,53 +340,56 @@ img { max-width: 100%; display: block; }
   margin-top: 4px;
 }
 
-.painpoints {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.problem-visual {
+  position: relative;
+  background: var(--morgentau);
+  border-radius: var(--radius-l);
+  padding: 28px 24px;
+  min-height: 420px;
 }
-.painpoint-chip {
+.problem-person {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 42%;
+  min-width: 150px;
+  max-width: 210px;
+  height: auto;
+}
+.problem-thoughts {
+  position: absolute;
+  right: 20px;
+  bottom: 24px;
+  left: 46%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 12px;
+}
+.thought-bubble {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--guave);
+  background: #fff;
   color: var(--heading);
   font-weight: 600;
-  font-size: .9rem;
-  padding: 9px 16px;
+  font-size: .86rem;
+  padding: 10px 15px;
   border-radius: 999px;
+  box-shadow: var(--shadow-card);
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(14px) scale(.94);
   transition: opacity .5s ease, transform .5s ease;
-  transition-delay: calc(var(--d, 0) * 80ms);
+  transition-delay: calc(.2s + var(--d, 0) * 500ms);
 }
-.painpoints.is-visible .painpoint-chip { opacity: 1; transform: translateY(0); }
-
-.problem-visual-svg { width: 100%; height: auto; display: block; }
-.problem-visual-line { opacity: 0; transition: opacity .6s ease; transition-delay: .3s; }
-.problem-visual-pill {
-  opacity: 0;
-  transform: translateY(-14px) scale(.7);
-  transform-origin: center;
-  transition: opacity .45s ease, transform .45s ease;
-  transition-delay: calc(.3s + var(--d, 0) * 90ms);
-}
-.problem-visual-mark {
-  opacity: 0;
-  transform: scale(.6);
-  transform-origin: 200px 265px;
-  transition: opacity .4s ease, transform .4s ease;
-  transition-delay: .75s;
-}
-.problem-visual.is-visible .problem-visual-line { opacity: 1; }
-.problem-visual.is-visible .problem-visual-pill { opacity: 1; transform: translateY(0) scale(1); }
-.problem-visual.is-visible .problem-visual-mark { opacity: 1; transform: scale(1); }
+.thought-bubble:nth-child(1) { margin-right: 0; }
+.thought-bubble:nth-child(2) { margin-right: 14px; }
+.thought-bubble:nth-child(3) { margin-right: 30px; }
+.thought-bubble:nth-child(4) { margin-right: 48px; }
+.problem-visual.is-visible .thought-bubble { opacity: 1; transform: translateY(0) scale(1); }
 
 @media (prefers-reduced-motion: reduce) {
-  .painpoint-chip,
-  .problem-visual-line,
-  .problem-visual-pill,
-  .problem-visual-mark {
+  .thought-bubble {
     transition: none;
     opacity: 1;
     transform: none;
@@ -416,12 +419,13 @@ img { max-width: 100%; display: block; }
 }
 .leistung-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
 .leistung-icon {
-  width: 48px; height: 48px;
-  border-radius: 14px;
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  background: var(--honigmelone);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 14px;
 }
-.leistung-icon .icon-scribble { width: 26px; height: 26px; }
+.leistung-icon .icon-scribble { width: 38px; height: 38px; }
 .leistung-card p { font-size: .92rem; margin-bottom: 0; }
 .leistung-note { text-align: center; max-width: 640px; margin: 36px auto 0; color: var(--schiefer); font-size: .92rem; }
 
