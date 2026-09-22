@@ -53,7 +53,6 @@
       progressBar.style.width = '100%';
     }
     backBtn.hidden = step === '1';
-    widget.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   widget.querySelectorAll('.check-answer').forEach(function (btn) {
@@ -62,7 +61,9 @@
       var value = btn.getAttribute('data-value');
       answers[step] = value;
 
-      if (value === 'no') {
+      // Frage 3 (Versicherungsstatus) entscheidet nur, ob die Beratung
+      // kostenlos ist - privat Versicherte können trotzdem buchen.
+      if (value === 'no' && step !== '3') {
         history.push('result-no');
         showStep('result-no');
         return;
@@ -71,16 +72,10 @@
       var next;
       if (step === '1') next = '2';
       else if (step === '2') next = '3';
-      else next = 'result-yes';
+      else next = value === 'yes' ? 'result-yes' : 'result-private';
 
       history.push(next);
       showStep(next);
-
-      if (next === 'result-yes') {
-        // Direkte Weiterleitung zur Terminbuchung, ausgelöst innerhalb des
-        // Klick-Handlers, damit Browser das Öffnen nicht als Popup blockieren.
-        window.open('https://termin.skapo.de', '_blank', 'noopener');
-      }
     });
   });
 
@@ -90,6 +85,22 @@
     var prev = history[history.length - 1];
     showStep(prev);
   });
+
+  /* ---------- Scroll-reveal for the problem section ---------- */
+  var revealTargets = document.querySelectorAll('.painpoints, .problem-visual');
+  if ('IntersectionObserver' in window && revealTargets.length) {
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    revealTargets.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  }
 
   /* ---------- Site navigation (scrollspy) ---------- */
   if (siteNav) {
