@@ -107,20 +107,25 @@
     showStep(prev);
   });
 
-  /* ---------- Scroll-reveal for the problem section ---------- */
-  var revealTargets = document.querySelectorAll('.problem-intro');
-  if ('IntersectionObserver' in window && revealTargets.length) {
-    var revealObserver = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    revealTargets.forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  /* ---------- Rotating question headline in the problem section ---------- */
+  var problemSlider = document.getElementById('problem-slider');
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (problemSlider && !reducedMotion) {
+    var sliderQuestions = [
+      'Verträgt sich das eigentlich alles?',
+      'Wurde etwas doppelt verordnet?',
+      'Woher kommt die Müdigkeit?',
+      'Wer hat noch den Überblick?'
+    ];
+    var sliderIndex = 0;
+    setInterval(function () {
+      sliderIndex = (sliderIndex + 1) % sliderQuestions.length;
+      problemSlider.classList.add('is-fading');
+      setTimeout(function () {
+        problemSlider.textContent = sliderQuestions[sliderIndex];
+        problemSlider.classList.remove('is-fading');
+      }, 300);
+    }, 3200);
   }
 
   /* ---------- Site navigation (scrollspy) ---------- */
