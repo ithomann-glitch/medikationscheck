@@ -10,16 +10,16 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Mobile nav toggle ---------- */
+  /* ---------- Mobile nav toggle (site-nav doubles as the mobile dropdown) ---------- */
   var navToggle = document.getElementById('nav-toggle');
-  var mainNav = document.getElementById('main-nav');
+  var siteNav = document.getElementById('site-nav');
   navToggle.addEventListener('click', function () {
-    var isOpen = mainNav.classList.toggle('is-open');
+    var isOpen = siteNav.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
-  mainNav.querySelectorAll('a').forEach(function (link) {
+  siteNav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
-      mainNav.classList.remove('is-open');
+      siteNav.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
@@ -75,6 +75,12 @@
 
       history.push(next);
       showStep(next);
+
+      if (next === 'result-yes') {
+        // Direkte Weiterleitung zur Terminbuchung, ausgelöst innerhalb des
+        // Klick-Handlers, damit Browser das Öffnen nicht als Popup blockieren.
+        window.open('https://termin.skapo.de', '_blank', 'noopener');
+      }
     });
   });
 
@@ -85,16 +91,15 @@
     showStep(prev);
   });
 
-  /* ---------- Side navigation (scrollspy) ---------- */
-  var sideNav = document.getElementById('side-nav');
-  if (sideNav) {
-    var sideNavLinks = Array.prototype.slice.call(sideNav.querySelectorAll('a'));
-    var sections = sideNavLinks
+  /* ---------- Site navigation (scrollspy) ---------- */
+  if (siteNav) {
+    var siteNavLinks = Array.prototype.slice.call(siteNav.querySelectorAll('a'));
+    var sections = siteNavLinks
       .map(function (link) { return document.getElementById(link.getAttribute('data-target')); })
       .filter(Boolean);
 
     var setActive = function (id) {
-      sideNavLinks.forEach(function (link) {
+      siteNavLinks.forEach(function (link) {
         link.classList.toggle('is-active', link.getAttribute('data-target') === id);
       });
     };
