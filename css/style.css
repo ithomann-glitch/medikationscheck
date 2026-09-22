@@ -278,7 +278,7 @@ img { max-width: 100%; display: block; }
   margin-right: auto;
   box-shadow: 0 24px 60px rgba(0,0,0,.22);
 }
-.hero-sub { font-size: 1.12rem; max-width: 52ch; }
+.hero-sub { font-size: 1.12rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0 24px; }
 .hero-trust {
   list-style: none;
@@ -426,15 +426,29 @@ img { max-width: 100%; display: block; }
 .zg-card p:last-child { font-size: .92rem; margin-bottom: 0; }
 
 /* ---------- Anspruchscheck ---------- */
-.anspruchscheck-section { background: #fff; }
+/* This is the page's central conversion tool, so it gets a distinct
+   background (breaks the white/morgentau alternation of neighboring
+   sections) and a visibly heavier card treatment than any other
+   component on the page. */
+.anspruchscheck-section { background: var(--guave); padding: 88px 0; }
+.anspruchscheck-section .eyebrow {
+  background: var(--erdbeere);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  letter-spacing: .04em;
+}
+.anspruchscheck-section .section-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); }
 .check-widget {
-  max-width: 640px;
+  max-width: 700px;
   margin: 0 auto;
-  background: var(--morgentau);
+  background: #fff;
   border-radius: var(--radius-l);
-  padding: 40px clamp(20px, 5vw, 48px);
+  border: 2px solid var(--erdbeere);
+  padding: 44px clamp(24px, 5vw, 56px);
   position: relative;
   overflow-anchor: none;
+  box-shadow: 0 28px 64px rgba(227,6,19,.16);
 }
 .check-progress {
   height: 6px;
@@ -463,7 +477,7 @@ img { max-width: 100%; display: block; }
   padding: 16px;
   border-radius: var(--radius-m);
   border: 2px solid #dfe1d9;
-  background: #fff;
+  background: var(--morgentau);
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--schiefer);
@@ -493,10 +507,9 @@ img { max-width: 100%; display: block; }
 .result-negative .btn { margin-top: 12px; }
 
 .result-options {
-  background: #fff;
+  background: var(--morgentau);
   border-radius: var(--radius-m);
   padding: 26px;
-  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   gap: 14px;
