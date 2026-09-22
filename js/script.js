@@ -136,15 +136,43 @@
       });
     };
 
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    // Picks whichever section's top has most recently scrolled past the
+    // reference line below the header - i.e. exactly the section we're
+    // currently inside. An IntersectionObserver with a fixed-height
+    // "detection band" instead marks every section overlapping that band
+    // as active independently; for a short section (like Anspruchscheck)
+    // that can fire together with the next section right after it, and
+    // whichever callback runs last wins the highlight - not necessarily
+    // the one actually in view. Comparing against a single line avoids
+    // that ambiguity regardless of how tall any given section is.
+    var updateActive = function () {
+      // Near the very bottom of the page there may not be enough room
+      // left to scroll the last section's top past the reference line
+      // (nothing below it but the footer) - treat that as "in" the last
+      // section rather than leaving the previous one highlighted.
+      var atBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2;
+      if (atBottom) {
+        setActive(sections[sections.length - 1].id);
+        return;
+      }
+      var refY = header.getBoundingClientRect().height + 24;
+      var current = sections[0];
+      sections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= refY) current = section;
+      });
+      setActive(current.id);
+    };
 
-      sections.forEach(function (section) { observer.observe(section); });
-    }
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        updateActive();
+        ticking = false;
+      });
+    }, { passive: true });
+    updateActive();
   }
 
 })();
