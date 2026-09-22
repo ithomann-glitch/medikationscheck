@@ -68,9 +68,9 @@
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="header-actions">
-      <a href="tel:08000001110" class="header-phone">
+      <a href="tel:08000513024" class="header-phone">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <span>0800 000 111 0</span>
+        <span>0800 0 513024</span>
       </a>
       <a href="#anspruchscheck" class="btn btn-primary btn-small">Anspruch prüfen</a>
     </div>
@@ -79,6 +79,17 @@
     </button>
   </div>
 </header>
+
+<nav class="side-nav" id="side-nav" aria-label="Seitennavigation">
+  <a href="#top" data-target="top"><span class="side-nav-dot"></span><span class="side-nav-label">Start</span></a>
+  <a href="#leistung" data-target="leistung"><span class="side-nav-dot"></span><span class="side-nav-label">Das Thema</span></a>
+  <a href="#zielgruppen" data-target="zielgruppen"><span class="side-nav-dot"></span><span class="side-nav-label">Für wen?</span></a>
+  <a href="#anspruchscheck" data-target="anspruchscheck"><span class="side-nav-dot"></span><span class="side-nav-label">Anspruchscheck</span></a>
+  <a href="#ablauf" data-target="ablauf"><span class="side-nav-dot"></span><span class="side-nav-label">Ablauf</span></a>
+  <a href="#vertrauen" data-target="vertrauen"><span class="side-nav-dot"></span><span class="side-nav-label">Vertrauen</span></a>
+  <a href="#faq" data-target="faq"><span class="side-nav-dot"></span><span class="side-nav-label">Fragen</span></a>
+  <a href="#kontakt" data-target="kontakt"><span class="side-nav-dot"></span><span class="side-nav-label">Kontakt</span></a>
+</nav>
 
 <main id="top">
 
@@ -99,25 +110,49 @@
           <li>In 2 Minuten Anspruch prüfen</li>
         </ul>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="pill-card">
-          <div class="pill-row">
-            <span class="pill pill-a">A</span>
-            <span class="pill pill-b">B</span>
-            <span class="pill pill-c">C</span>
-            <span class="pill pill-d">D</span>
-            <span class="pill pill-e">E</span>
-          </div>
-          <div class="pill-equals">=</div>
-          <div class="pill-question">Passt das&nbsp;alles<br>zusammen?</div>
-        </div>
-        <svg class="dot-trail" width="220" height="90" viewBox="0 0 220 90" fill="none">
-          <path d="M10 80C60 80 90 20 210 15" stroke="#4A4C48" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
-          <circle cx="20" cy="76" r="7" fill="#C7DF7D"/>
-          <circle cx="48" cy="60" r="6" fill="#A2C617"/>
-          <circle cx="78" cy="42" r="7" fill="#E30613"/>
-          <circle cx="112" cy="28" r="6" fill="#E30613"/>
-          <circle cx="150" cy="18" r="7" fill="#E30613"/>
+      <div class="hero-visual">
+        <svg class="hero-illustration" viewBox="0 0 440 400" role="img" aria-label="Eine Apothekerin bespricht gemeinsam mit einer älteren Patientin deren Medikamente">
+          <rect x="0" y="0" width="440" height="400" rx="32" fill="#F3F4F0"/>
+          <path class="dot-trail-path" d="M40 70C120 40 300 40 400 90" stroke="#4A4C48" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round" fill="none"/>
+          <circle cx="52" cy="66" r="6" fill="#C7DF7D"/>
+          <circle cx="90" cy="52" r="5" fill="#A2C617"/>
+          <circle cx="130" cy="44" r="6" fill="#E30613"/>
+          <ellipse cx="220" cy="345" rx="165" ry="16" fill="#C7DF7D" opacity=".5"/>
+
+          <!-- Patientin -->
+          <g>
+            <rect x="38" y="70" width="168" height="230" rx="26" fill="#C7DF7D"/>
+            <circle cx="122" cy="300" r="118" fill="#136A21"/>
+            <circle cx="122" cy="170" r="48" fill="#F1C6A0"/>
+            <path d="M76 158c-4-34 20-58 46-58s50 24 46 58c-10-8-24-14-46-14s-36 6-46 14Z" fill="#DADDD4"/>
+            <circle cx="104" cy="172" r="9" fill="none" stroke="#4A4C48" stroke-width="3"/>
+            <circle cx="140" cy="172" r="9" fill="none" stroke="#4A4C48" stroke-width="3"/>
+            <path d="M113 172h14" stroke="#4A4C48" stroke-width="3"/>
+            <path d="M104 196c6 7 26 7 32 0" stroke="#4A4C48" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- Apothekerin -->
+          <g>
+            <rect x="234" y="70" width="168" height="230" rx="26" fill="#F9E7E8"/>
+            <circle cx="318" cy="305" r="122" fill="#ffffff"/>
+            <path d="M318 205c-34 0-62 16-72 40 8 34 38 58 72 58s64-24 72-58c-10-24-38-40-72-40Z" fill="#136A21"/>
+            <circle cx="318" cy="172" r="48" fill="#C98A5E"/>
+            <path d="M272 168c-6-30 18-52 46-52s52 22 46 52c-12-10-28-16-46-16s-34 6-46 16Z" fill="#3A2A22"/>
+            <path d="M300 196c6 7 24 7 30 0" stroke="#4A4C48" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="318" cy="252" r="16" fill="#ffffff" stroke="#136A21" stroke-width="3"/>
+            <path d="M312 252h12M318 246v12" stroke="#E30613" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- Medikationsplan zwischen beiden -->
+          <rect x="172" y="230" width="96" height="66" rx="10" fill="#ffffff" stroke="#DADDD4" stroke-width="2"/>
+          <rect x="184" y="244" width="52" height="6" rx="3" fill="#A2C617"/>
+          <rect x="184" y="256" width="72" height="6" rx="3" fill="#DADDD4"/>
+          <rect x="184" y="268" width="60" height="6" rx="3" fill="#DADDD4"/>
+          <rect x="184" y="280" width="40" height="6" rx="3" fill="#DADDD4"/>
+
+          <!-- Vertrauens-Badge -->
+          <circle cx="220" cy="150" r="26" fill="#E30613"/>
+          <path d="M209 150l8 8 16-18" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -128,27 +163,17 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Das eigentliche Thema</p>
-        <h2>5&nbsp;Medikamente. Aber wer schaut auf das&nbsp;Gesamtbild?</h2>
-        <p class="section-sub">Mehrere Erkrankungen, verschiedene Fachärzt:innen, mehrere Rezepte. Jedes Medikament für sich wurde geprüft – aber wurde auch geprüft, wie sie <em>zusammen</em> wirken?</p>
+        <h2>5&nbsp;Medikamente. Eine Frage, die zählt.</h2>
+        <p class="section-sub">Mehrere Erkrankungen, verschiedene Fachärzt:innen, mehrere Rezepte. Vielleicht kennen Sie einen dieser Gedanken:</p>
       </div>
 
-      <div class="problem-visual">
-        <div class="problem-meds">
-          <div class="med-chip">Medikament A</div>
-          <span class="plus">+</span>
-          <div class="med-chip">Medikament B</div>
-          <span class="plus">+</span>
-          <div class="med-chip">Medikament C</div>
-          <span class="plus">+</span>
-          <div class="med-chip">Medikament D</div>
-          <span class="plus">+</span>
-          <div class="med-chip">Medikament E</div>
-        </div>
-        <div class="problem-result">
-          <span class="equals-sign">=</span>
-          <p>Aber passen sie auch zusammen?</p>
-        </div>
+      <div class="painpoints">
+        <div class="painpoint-chip"><span class="painpoint-icon">🤔</span>Verträgt sich das eigentlich alles?</div>
+        <div class="painpoint-chip"><span class="painpoint-icon">💊</span>Wurde etwas doppelt verordnet?</div>
+        <div class="painpoint-chip"><span class="painpoint-icon">😴</span>Woher kommt die Müdigkeit?</div>
+        <div class="painpoint-chip"><span class="painpoint-icon">🗂️</span>Wer hat noch den Überblick?</div>
       </div>
+      <p class="painpoints-reassure">Das sind ganz normale Fragen – deshalb lohnt sich ein ruhiger Blick auf das Gesamtbild. Genau dabei unterstützen wir Sie:</p>
 
       <div class="leistung-grid">
         <div class="leistung-card">
@@ -177,7 +202,7 @@
   </section>
 
   <!-- ZIELGRUPPEN -->
-  <section class="section zielgruppen">
+  <section class="section zielgruppen" id="zielgruppen">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Für wen ist das gedacht?</p>
@@ -253,55 +278,17 @@
             <span class="result-icon">✓</span>
             <div>
               <h3>Sie könnten Anspruch haben!</h3>
-              <p>Füllen Sie das Formular aus – wir melden uns für einen Beratungstermin bei Ihnen.</p>
+              <p>Vereinbaren Sie jetzt direkt einen Termin – online, telefonisch oder vor Ort in Ihrer sk-Apotheke.</p>
             </div>
           </div>
 
-          <form class="lead-form" id="lead-form" novalidate>
-            <div class="form-row">
-              <label for="lf-name">Name*</label>
-              <input type="text" id="lf-name" name="name" required autocomplete="name">
-            </div>
-            <div class="form-row form-row-half">
-              <div>
-                <label for="lf-phone">Telefon</label>
-                <input type="tel" id="lf-phone" name="phone" autocomplete="tel">
-              </div>
-              <div>
-                <label for="lf-email">E-Mail</label>
-                <input type="email" id="lf-email" name="email" autocomplete="email">
-              </div>
-            </div>
-            <p class="form-hint">Bitte mindestens Telefon oder E-Mail angeben.</p>
-            <div class="form-row">
-              <label for="lf-apotheke">Ihre sk-Apotheke oder PLZ</label>
-              <input type="text" id="lf-apotheke" name="apotheke" autocomplete="postal-code">
-            </div>
-            <div class="form-row">
-              <label for="lf-zeit">Bevorzugte Kontaktzeit</label>
-              <select id="lf-zeit" name="zeit">
-                <option value="egal">Egal</option>
-                <option value="vormittag">Vormittags</option>
-                <option value="nachmittag">Nachmittags</option>
-                <option value="abend">Abends</option>
-              </select>
-            </div>
-            <div class="form-row form-row-checkbox">
-              <input type="checkbox" id="lf-privacy" name="privacy" required>
-              <label for="lf-privacy">Ich habe die <a href="#" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und bin mit der Kontaktaufnahme einverstanden.*</label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-large btn-block">Termin anfragen</button>
-          </form>
-        </div>
-
-        <!-- Success -->
-        <div class="check-step check-result" data-step="success">
-          <div class="result-banner result-positive">
-            <span class="result-icon">✓</span>
-            <div>
-              <h3>Danke! Ihre Anfrage ist bei uns eingegangen.</h3>
-              <p>Wir melden uns in Kürze bei Ihnen, um einen Beratungstermin zu vereinbaren. Sie können uns auch direkt anrufen: <a href="tel:08000001110">0800 000 111 0</a></p>
-            </div>
+          <div class="result-options">
+            <a href="https://termin.skapo.de" target="_blank" rel="noopener" class="btn btn-primary btn-large btn-block">Termin online vereinbaren</a>
+            <a href="tel:08000513024" class="result-option-alt">
+              <span class="result-option-icon">📞</span>
+              <span>Telefonisch: <strong>0800 0 513024</strong></span>
+            </a>
+            <p class="result-option-note">Alternativ auch ganz unkompliziert vor Ort in Ihrer sk-Apotheke.</p>
           </div>
         </div>
 
@@ -312,7 +299,7 @@
             <div>
               <h3>Diese Beratung passt aktuell vermutlich nicht zu Ihrer Situation.</h3>
               <p>Die kostenlose Medikationsberatung richtet sich an Menschen, die dauerhaft fünf oder mehr ärztlich verordnete Medikamente einnehmen und gesetzlich versichert sind. Haben Sie trotzdem Fragen zu Ihren Medikamenten? Wir sind gern für Sie da.</p>
-              <a href="tel:08000001110" class="btn btn-secondary">In der Apotheke anrufen</a>
+              <a href="tel:08000513024" class="btn btn-secondary">In der Apotheke anrufen</a>
             </div>
           </div>
         </div>
@@ -357,7 +344,7 @@
   </section>
 
   <!-- VERTRAUEN -->
-  <section class="section vertrauen">
+  <section class="section vertrauen" id="vertrauen">
     <div class="container vertrauen-inner">
       <div class="vertrauen-badge">🎓</div>
       <h2>Durchgeführt von Apotheker:innen mit pharmazeutischer Qualifikation</h2>
@@ -420,9 +407,10 @@
       <h2>Passen Ihre Medikamente zusammen?</h2>
       <p>Finden Sie es heraus – kostenlos und unverbindlich.</p>
       <div class="hero-actions final-cta-actions">
-        <a href="#anspruchscheck" class="btn btn-primary btn-large">Anspruch prüfen &amp; Termin vereinbaren</a>
-        <a href="tel:08000001110" class="btn btn-ghost-invert">Oder anrufen: 0800 000 111 0</a>
+        <a href="https://termin.skapo.de" target="_blank" rel="noopener" class="btn btn-primary btn-large">Termin vereinbaren auf termin.skapo.de</a>
+        <a href="tel:08000513024" class="btn btn-ghost-invert">Oder anrufen: 0800 0 513024</a>
       </div>
+      <p class="final-cta-note">Alternativ auch ganz unkompliziert vor Ort in Ihrer sk-Apotheke.</p>
     </div>
   </section>
 
@@ -438,11 +426,11 @@
       <a href="#">Impressum</a>
       <a href="#">Datenschutz</a>
     </nav>
-    <p class="footer-copy">&copy; sk-Apotheken · Medikationsberatung bei Polymedikation</p>
+    <p class="footer-copy">&copy; sk-Apotheken · Medikationsberatung bei Polymedikation · Termine: <a href="https://termin.skapo.de" target="_blank" rel="noopener">termin.skapo.de</a> · Tel. <a href="tel:08000513024">0800 0 513024</a></p>
   </div>
 </footer>
 
-<a href="#anspruchscheck" class="sticky-cta">Anspruch prüfen &amp; Termin vereinbaren</a>
+<a href="https://termin.skapo.de" target="_blank" rel="noopener" class="sticky-cta">Termin vereinbaren auf termin.skapo.de</a>
 
 <script src="js/script.js"></script>
 </body>

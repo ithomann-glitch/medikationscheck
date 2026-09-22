@@ -85,32 +85,29 @@
     showStep(prev);
   });
 
-  /* ---------- Lead form submission ----------
-     Demo-Verhalten: Es gibt aktuell keinen Backend-Endpunkt.
-     TODO: fetch() gegen echten CRM-/Terminbuchungs-Endpunkt ersetzen. */
-  var leadForm = document.getElementById('lead-form');
-  leadForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  /* ---------- Side navigation (scrollspy) ---------- */
+  var sideNav = document.getElementById('side-nav');
+  if (sideNav) {
+    var sideNavLinks = Array.prototype.slice.call(sideNav.querySelectorAll('a'));
+    var sections = sideNavLinks
+      .map(function (link) { return document.getElementById(link.getAttribute('data-target')); })
+      .filter(Boolean);
 
-    var phone = leadForm.phone.value.trim();
-    var email = leadForm.email.value.trim();
-    if (!phone && !email) {
-      leadForm.phone.setCustomValidity('Bitte Telefon oder E-Mail angeben.');
-      leadForm.phone.reportValidity();
-      return;
+    var setActive = function (id) {
+      sideNavLinks.forEach(function (link) {
+        link.classList.toggle('is-active', link.getAttribute('data-target') === id);
+      });
+    };
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+      sections.forEach(function (section) { observer.observe(section); });
     }
-    leadForm.phone.setCustomValidity('');
-
-    if (!leadForm.checkValidity()) {
-      leadForm.reportValidity();
-      return;
-    }
-
-    // Platzhalter für echte Übermittlung an CRM/Terminsystem.
-    // fetch('/api/leads', { method: 'POST', body: new FormData(leadForm) });
-
-    history.push('success');
-    showStep('success');
-  });
+  }
 
 })();
