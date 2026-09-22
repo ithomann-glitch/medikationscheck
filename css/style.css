@@ -251,7 +251,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 520px;
+  min-height: 680px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -635,11 +635,13 @@ img { max-width: 100%; display: block; }
 .faq-answer p { padding: 0 4px 20px; font-size: .95rem; color: var(--schiefer); margin: 0; }
 
 /* ---------- Final CTA ---------- */
-.final-cta { background: var(--schiefer); color: #fff; text-align: center; }
+.final-cta { background: var(--erdbeere); color: #fff; text-align: center; }
 .final-cta h2 { color: #fff; }
-.final-cta p { color: rgba(255,255,255,.85); font-size: 1.1rem; }
+.final-cta p { color: rgba(255,255,255,.9); font-size: 1.1rem; }
 .final-cta-actions { justify-content: center; margin-top: 24px; }
-.final-cta-note { font-size: .88rem; color: rgba(255,255,255,.7); margin-top: 18px; }
+.final-cta-note { font-size: .88rem; color: rgba(255,255,255,.8); margin-top: 18px; }
+.final-cta .btn-primary { background: #fff; color: var(--erdbeere); }
+.final-cta .btn-primary:hover { background: rgba(255,255,255,.88); transform: translateY(-1px); box-shadow: var(--shadow-hover); }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--limette); color: #fff; padding: 48px 0 32px; }
