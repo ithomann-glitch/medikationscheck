@@ -251,7 +251,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 680px;
+  min-height: clamp(640px, 90vh, 920px);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -635,13 +635,11 @@ img { max-width: 100%; display: block; }
 .faq-answer p { padding: 0 4px 20px; font-size: .95rem; color: var(--schiefer); margin: 0; }
 
 /* ---------- Final CTA ---------- */
-.final-cta { background: var(--erdbeere); color: #fff; text-align: center; }
-.final-cta h2 { color: #fff; }
-.final-cta p { color: rgba(255,255,255,.9); font-size: 1.1rem; }
-.final-cta-actions { justify-content: center; margin-top: 24px; }
-.final-cta-note { font-size: .88rem; color: rgba(255,255,255,.8); margin-top: 18px; }
-.final-cta .btn-primary { background: #fff; color: var(--erdbeere); }
-.final-cta .btn-primary:hover { background: rgba(255,255,255,.88); transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+.final-cta { background: var(--honigmelone); color: var(--heading); text-align: center; padding: 48px 0; }
+.final-cta h2 { color: var(--heading); }
+.final-cta p { color: var(--heading); font-size: 1.05rem; }
+.final-cta-actions { justify-content: center; margin-top: 20px; }
+.final-cta-note { font-size: .86rem; color: var(--heading); opacity: .75; margin-top: 14px; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--limette); color: #fff; padding: 48px 0 32px; }
