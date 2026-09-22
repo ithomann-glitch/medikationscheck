@@ -253,7 +253,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   min-height: clamp(640px, 90vh, 920px);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
 }
 .hero-bg {
@@ -269,7 +269,7 @@ img { max-width: 100%; display: block; }
   object-position: 15% 22%;
   z-index: 0;
 }
-.hero .container { position: relative; z-index: 1; padding-top: 56px; padding-bottom: 56px; }
+.hero .container { position: relative; z-index: 1; padding-bottom: 64px; }
 .hero-copy {
   background: #fff;
   border-radius: var(--radius-l);
