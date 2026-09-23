@@ -419,6 +419,17 @@
           <p>Ganz unkompliziert<br>in Ihrer sk-Apotheke</p>
         </div>
       </div>
+
+      <div class="branch-finder">
+        <form id="branch-finder-form" class="branch-finder-form">
+          <label for="branch-plz">Ihre PLZ, um die nächste sk-Apotheke zu finden</label>
+          <div class="branch-finder-row">
+            <input type="text" id="branch-plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="z.&nbsp;B. 28199" required>
+            <button type="submit" class="btn btn-secondary btn-small">Filiale finden</button>
+          </div>
+        </form>
+        <div class="branch-results" id="branch-results" hidden></div>
+      </div>
     </div>
   </section>
 

@@ -191,4 +191,44 @@
     updateActive();
   }
 
+  /* ---------- Filialfinder (PLZ) ---------- */
+  var branchForm = document.getElementById('branch-finder-form');
+  if (branchForm) {
+    var branches = [
+      { name: 'sk-Apotheke im Einkaufspark Duckwitz', address: 'Duckwitzstraße 55, 28199 Bremen', plz: 28199 },
+      { name: 'sk-Apotheke Pappelstraße', address: 'Pappelstraße 53-57, 28199 Bremen', plz: 28199 },
+      { name: 'sk-Apotheke Victoria in Huchting', address: 'Kirchhuchtinger Landstraße 80, 28259 Bremen', plz: 28259 },
+      { name: 'sk-Apotheke in Varrel', address: 'Im Graftwinkel 2, 28816 Stuhr', plz: 28816 }
+    ];
+    var resultsEl = document.getElementById('branch-results');
+    var plzInput = document.getElementById('branch-plz');
+
+    branchForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var plz = parseInt(plzInput.value, 10);
+      if (!plz || plzInput.value.length !== 5) return;
+
+      var sorted = branches.slice().sort(function (a, b) {
+        return Math.abs(a.plz - plz) - Math.abs(b.plz - plz);
+      });
+
+      var html = sorted.map(function (branch, i) {
+        var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' +
+          encodeURIComponent(branch.name + ', ' + branch.address);
+        return '<div class="branch-result' + (i === 0 ? ' is-nearest' : '') + '">' +
+          '<div>' +
+          '<span class="branch-result-name">' + branch.name +
+          (i === 0 ? '<span class="branch-result-badge">Näheste PLZ</span>' : '') +
+          '</span>' +
+          '<div class="branch-result-address">' + branch.address + '</div>' +
+          '</div>' +
+          '<a class="branch-result-link" href="' + mapsUrl + '" target="_blank" rel="noopener">Route ↗</a>' +
+          '</div>';
+      }).join('') + '<p class="branch-finder-note">Grobe Einschätzung anhand der Postleitzahl – für die genaue Route nutzen Sie gerne den Kartenlink.</p>';
+
+      resultsEl.innerHTML = html;
+      resultsEl.hidden = false;
+    });
+  }
+
 })();
