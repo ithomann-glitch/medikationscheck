@@ -191,6 +191,41 @@
     updateActive();
   }
 
+  /* ---------- Sticky mobile CTA ---------- */
+  var stickyCta = document.getElementById('sticky-cta');
+  if (stickyCta) {
+    var stickyLink = stickyCta.querySelector('a');
+    var heroEl = document.querySelector('.hero');
+    // Hidden while the Anspruchscheck or Kontakt sections are on screen -
+    // both already carry their own primary CTA, so a second one stacked
+    // on top would just be redundant chrome.
+    var stickyHideTargets = [document.getElementById('anspruchscheck'), document.getElementById('kontakt')].filter(Boolean);
+
+    var updateStickyCta = function () {
+      var pastHero = heroEl ? window.scrollY > heroEl.offsetHeight - 80 : window.scrollY > 400;
+      var targetVisible = stickyHideTargets.some(function (el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      });
+      var visible = pastHero && !targetVisible;
+      stickyCta.classList.toggle('is-visible', visible);
+      stickyCta.setAttribute('aria-hidden', String(!visible));
+      if (stickyLink) stickyLink.tabIndex = visible ? 0 : -1;
+    };
+
+    var stickyTicking = false;
+    window.addEventListener('scroll', function () {
+      if (stickyTicking) return;
+      stickyTicking = true;
+      requestAnimationFrame(function () {
+        updateStickyCta();
+        stickyTicking = false;
+      });
+    }, { passive: true });
+    window.addEventListener('resize', updateStickyCta);
+    updateStickyCta();
+  }
+
   /* ---------- Filialfinder (PLZ) ---------- */
   var branchForm = document.getElementById('branch-finder-form');
   if (branchForm) {

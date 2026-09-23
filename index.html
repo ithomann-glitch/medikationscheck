@@ -59,8 +59,8 @@
 
     <nav class="site-nav" id="site-nav" aria-label="Seitennavigation">
       <a href="#leistung" data-target="leistung">Das Thema</a>
-      <a href="#anspruchscheck" data-target="anspruchscheck">Anspruchscheck</a>
       <a href="#ablauf" data-target="ablauf">Ablauf</a>
+      <a href="#anspruchscheck" data-target="anspruchscheck">Anspruchscheck</a>
       <a href="#faq" data-target="faq">Gut zu wissen</a>
       <a href="#kontakt" data-target="kontakt">Kontakt</a>
     </nav>
@@ -77,6 +77,10 @@
     </button>
   </div>
 </header>
+
+<div class="sticky-cta" id="sticky-cta">
+  <a href="#anspruchscheck" class="btn btn-primary btn-block" tabindex="-1">Anspruch jetzt prüfen</a>
+</div>
 
 <main id="top">
 
@@ -191,6 +195,39 @@
     </div>
   </section>
 
+  <!-- ABLAUF -->
+  <section class="section ablauf" id="ablauf">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">So läuft es ab</p>
+        <h2>Vier Schritte zu mehr Sicherheit</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-number">1</span>
+          <h3>Anspruch prüfen</h3>
+          <p>In wenigen Fragen unverbindlich klären, ob Sie anspruchsberechtigt sind.</p>
+          <a href="#anspruchscheck" class="btn btn-secondary btn-small step-cta">Jetzt prüfen ↓</a>
+        </li>
+        <li class="step">
+          <span class="step-number">2</span>
+          <h3>Termin vereinbaren</h3>
+          <p>Online anfragen oder direkt in Ihrer sk-Apotheke anrufen.</p>
+        </li>
+        <li class="step">
+          <span class="step-number">3</span>
+          <h3>Beratungsgespräch</h3>
+          <p>Bringen Sie alle Medikamente mit. Unsere Apotheker:innen besprechen mit Ihnen die gesamte Medikation.</p>
+        </li>
+        <li class="step">
+          <span class="step-number">4</span>
+          <h3>Aktualisierter Medikationsplan</h3>
+          <p>Sie erhalten einen übersichtlichen Plan und konkrete Empfehlungen zum Mitnehmen.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <!-- ANSPRUCHSCHECK -->
   <section class="section anspruchscheck-section" id="anspruchscheck">
     <div class="container">
@@ -204,6 +241,10 @@
         <div class="check-progress">
           <div class="check-progress-bar" id="check-progress-bar"></div>
         </div>
+        <p class="check-privacy-note">
+          <img class="icon-scribble icon-scribble-sm" src="assets/img/icons/sicherheit.svg" alt="">
+          Ihre Angaben werden nicht gespeichert und nicht an Dritte weitergegeben.
+        </p>
 
         <!-- Step 1 -->
         <div class="check-step is-active" data-step="1">
@@ -292,39 +333,6 @@
           <button type="button" class="check-back" id="check-back" hidden>← Zurück</button>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ABLAUF -->
-  <section class="section ablauf" id="ablauf">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">So läuft es ab</p>
-        <h2>Vier Schritte zu mehr Sicherheit</h2>
-      </div>
-      <ol class="steps">
-        <li class="step">
-          <span class="step-number">1</span>
-          <h3>Anspruch prüfen</h3>
-          <p>In wenigen Fragen unverbindlich klären, ob Sie anspruchsberechtigt sind.</p>
-          <a href="#anspruchscheck" class="btn btn-secondary btn-small step-cta">Jetzt prüfen ↑</a>
-        </li>
-        <li class="step">
-          <span class="step-number">2</span>
-          <h3>Termin vereinbaren</h3>
-          <p>Online anfragen oder direkt in Ihrer sk-Apotheke anrufen.</p>
-        </li>
-        <li class="step">
-          <span class="step-number">3</span>
-          <h3>Beratungsgespräch</h3>
-          <p>Bringen Sie alle Medikamente mit. Unsere Apotheker:innen besprechen mit Ihnen die gesamte Medikation.</p>
-        </li>
-        <li class="step">
-          <span class="step-number">4</span>
-          <h3>Aktualisierter Medikationsplan</h3>
-          <p>Sie erhalten einen übersichtlichen Plan und konkrete Empfehlungen zum Mitnehmen.</p>
-        </li>
-      </ol>
     </div>
   </section>
 
@@ -447,8 +455,8 @@
       <ul class="footer-list">
         <li><a href="#top">Start</a></li>
         <li><a href="#leistung">Das Thema</a></li>
-        <li><a href="#anspruchscheck">Anspruchscheck</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#anspruchscheck">Anspruchscheck</a></li>
         <li><a href="#faq">Gut zu wissen</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
