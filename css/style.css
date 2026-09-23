@@ -748,7 +748,7 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
 .footer-list a { color: #fff; font-size: .92rem; }
 .footer-list a:hover { text-decoration: underline; }
 .footer-cta-col { display: flex; align-items: flex-start; justify-content: flex-end; }
-.footer-logo { height: 40px; filter: brightness(0) invert(1); opacity: .9; margin-bottom: 6px; }
+.footer-logo { height: 40px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); opacity: .9; margin-bottom: 6px; }
 .footer-cta { background: var(--erdbeere); color: #fff; white-space: nowrap; }
 .footer-cta:hover { background: var(--erdbeere-dark); }
 .footer-bottom {
