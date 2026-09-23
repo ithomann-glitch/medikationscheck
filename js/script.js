@@ -217,14 +217,15 @@
           encodeURIComponent(branch.name + ', ' + branch.address);
         return '<div class="branch-result' + (i === 0 ? ' is-nearest' : '') + '">' +
           '<div>' +
-          '<span class="branch-result-name">' + branch.name +
+          '<div class="branch-result-title">' +
+          '<span class="branch-result-name">' + branch.name + '</span>' +
           (i === 0 ? '<span class="branch-result-badge">Näheste PLZ</span>' : '') +
-          '</span>' +
+          '</div>' +
           '<div class="branch-result-address">' + branch.address + '</div>' +
           '</div>' +
           '<a class="branch-result-link" href="' + mapsUrl + '" target="_blank" rel="noopener">Route ↗</a>' +
           '</div>';
-      }).join('') + '<p class="branch-finder-note">Grobe Einschätzung anhand der Postleitzahl – für die genaue Route nutzen Sie gerne den Kartenlink.</p>';
+      }).join('');
 
       resultsEl.innerHTML = html;
       resultsEl.hidden = false;
