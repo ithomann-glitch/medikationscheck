@@ -408,7 +408,6 @@ img { max-width: 100%; display: block; }
   transition: max-height .25s ease;
 }
 .leistung-detail p { font-size: .88rem; color: var(--schiefer); margin: 12px 0 0; }
-.leistung-note { text-align: center; max-width: 640px; margin: 36px auto 0; color: var(--schiefer); font-size: .92rem; }
 
 /* ---------- Zielgruppen ---------- */
 .zielgruppen { background: var(--morgentau); }
