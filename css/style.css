@@ -592,52 +592,54 @@ img { max-width: 100%; display: block; }
 .step-cta { margin-top: 16px; }
 
 /* ---------- Vertrauen ---------- */
-.vertrauen { background: var(--honigmelone); color: var(--heading); padding: 96px 0; }
-.vertrauen-inner { max-width: 1040px; }
+/* Both rows (quote and facts) share the same container width so their
+   left/right edges line up - previously the facts row was a centered
+   flex group of fixed-width cards with no relation to the grid above it. */
+.vertrauen { background: var(--honigmelone); color: var(--heading); padding: 72px 0; }
+.vertrauen-inner { max-width: 980px; }
 .vertrauen-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
+  grid-template-columns: 220px 1fr;
+  gap: 36px;
   align-items: center;
-  margin-bottom: 56px;
+  margin-bottom: 32px;
 }
 .vertrauen-quote-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: var(--radius-l);
   box-shadow: var(--shadow-card);
 }
-.vertrauen-content h2 { color: var(--heading); }
+.vertrauen-content h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); color: var(--heading); }
 .vertrauen-quote-text {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
   color: var(--heading);
-  line-height: 1.45;
-  margin: 20px 0 16px;
+  line-height: 1.4;
+  margin: 14px 0 12px;
 }
-.vertrauen-quote-author { font-weight: 700; color: var(--heading); font-size: 1rem; margin-bottom: 0; }
-.vertrauen-quote-author span { display: block; font-weight: 500; color: var(--schiefer); font-size: .88rem; margin-top: 2px; }
+.vertrauen-quote-author { font-weight: 700; color: var(--heading); font-size: .95rem; margin-bottom: 0; }
+.vertrauen-quote-author span { display: block; font-weight: 500; color: var(--schiefer); font-size: .84rem; margin-top: 2px; }
 .vertrauen-facts {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 .vertrauen-fact {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
   background: #fff;
   border-radius: var(--radius-m);
-  padding: 24px 26px;
-  width: 190px;
+  padding: 16px 20px;
   box-shadow: var(--shadow-card);
 }
-.vertrauen-fact strong { font-family: var(--font-head); font-size: 1.15rem; color: var(--heading); }
-.vertrauen-fact span { font-size: .84rem; color: var(--schiefer); text-align: center; }
+.vertrauen-fact .icon-scribble-md { width: 32px; height: 32px; flex-shrink: 0; }
+.vertrauen-fact-text { display: flex; flex-direction: column; }
+.vertrauen-fact strong { font-family: var(--font-head); font-size: 1.05rem; color: var(--heading); }
+.vertrauen-fact span { font-size: .82rem; color: var(--schiefer); }
 
 /* ---------- FAQ ---------- */
 .faq { background: #fff; }
@@ -730,12 +732,13 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
   .leistung-grid { grid-template-columns: repeat(2, 1fr); }
   .zielgruppen-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
-  .vertrauen-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
-  .vertrauen-quote-photo { max-width: 280px; margin: 0 auto; }
+  .vertrauen-grid { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+  .vertrauen-quote-photo { max-width: 200px; margin: 0 auto; }
 }
 
 @media (max-width: 760px) {
   .leistung-grid { grid-template-columns: 1fr; }
+  .vertrauen-facts { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   .form-row-half { grid-template-columns: 1fr; }
   .section { padding: 52px 0; }
