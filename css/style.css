@@ -761,7 +761,7 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
 .site-footer { background: var(--limette); color: #fff; padding: 40px 0 0; }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr auto;
+  grid-template-columns: 1.4fr 1fr;
   gap: 32px;
   align-items: start;
   padding-bottom: 28px;
@@ -775,9 +775,14 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
 .footer-list li::before { content: "•"; position: absolute; left: 0; color: var(--erdbeere); font-weight: 800; }
 .footer-list a { color: #fff; font-size: .92rem; }
 .footer-list a:hover { text-decoration: underline; }
-.footer-cta-col { display: flex; align-items: flex-start; justify-content: flex-end; }
 .footer-logo { height: 40px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); opacity: .9; margin-bottom: 6px; }
-.footer-cta { background: var(--erdbeere); color: #fff; white-space: nowrap; }
+.footer-cta {
+  background: var(--erdbeere);
+  color: #fff;
+  white-space: nowrap;
+  margin-top: 6px;
+  width: 219px;
+}
 .footer-cta:hover { background: var(--erdbeere-dark); }
 .footer-bottom {
   display: flex;
@@ -795,7 +800,6 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
 
 @media (max-width: 760px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
-  .footer-cta-col { grid-column: 1 / -1; justify-content: flex-start; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
