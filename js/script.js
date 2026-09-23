@@ -55,6 +55,17 @@
     });
   });
 
+  /* ---------- Leistung-Karten (Wechselwirkungen etc.) ---------- */
+  document.querySelectorAll('.leistung-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var detail = btn.nextElementSibling;
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.firstChild.textContent = expanded ? 'Mehr erfahren' : 'Weniger anzeigen';
+      detail.style.maxHeight = expanded ? null : detail.scrollHeight + 'px';
+    });
+  });
+
   /* ---------- Anspruchscheck (Lead-Qualifizierung) ---------- */
   var widget = document.getElementById('check-widget');
   var progressBar = document.getElementById('check-progress-bar');

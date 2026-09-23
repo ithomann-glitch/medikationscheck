@@ -375,7 +375,28 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
 }
 .leistung-icon .icon-scribble { width: 38px; height: 38px; }
-.leistung-card p { font-size: .92rem; margin-bottom: 0; }
+.leistung-card > p { font-size: .92rem; margin-bottom: 12px; }
+.leistung-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--avocado);
+  font-weight: 700;
+  font-size: .85rem;
+  cursor: pointer;
+}
+.leistung-toggle:hover { color: var(--erdbeere); }
+.leistung-toggle-icon { font-size: 1.15rem; font-weight: 400; line-height: 1; transition: transform .2s ease; }
+.leistung-toggle[aria-expanded="true"] .leistung-toggle-icon { transform: rotate(45deg); }
+.leistung-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+}
+.leistung-detail p { font-size: .88rem; color: var(--schiefer); margin: 12px 0 0; }
 .leistung-note { text-align: center; max-width: 640px; margin: 36px auto 0; color: var(--schiefer); font-size: .92rem; }
 
 /* ---------- Zielgruppen ---------- */
@@ -617,6 +638,37 @@ img { max-width: 100%; display: block; }
 .vertrauen-fact strong { font-family: var(--font-head); font-size: 1.15rem; color: var(--heading); }
 .vertrauen-fact span { font-size: .84rem; color: var(--schiefer); text-align: center; }
 
+/* ---------- Vertrauen: persönliches Zitat ---------- */
+.vertrauen-quote {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  background: rgba(255,255,255,.55);
+  border-radius: var(--radius-l);
+  padding: 22px 28px;
+  margin: 0 auto 40px;
+  max-width: 620px;
+}
+.vertrauen-quote-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-card);
+}
+.vertrauen-quote-text {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .98rem;
+  color: var(--heading);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.vertrauen-quote-author { font-weight: 700; color: var(--heading); font-size: .88rem; margin-bottom: 0; }
+.vertrauen-quote-author span { display: block; font-weight: 500; color: var(--schiefer); font-size: .8rem; margin-top: 1px; }
+
 /* ---------- FAQ ---------- */
 .faq { background: #fff; }
 .faq-list { max-width: 760px; margin: 0 auto; }
@@ -651,8 +703,27 @@ img { max-width: 100%; display: block; }
 .final-cta { background: var(--honigmelone); color: var(--heading); text-align: center; padding: 48px 0; }
 .final-cta h2 { color: var(--heading); }
 .final-cta p { color: var(--heading); font-size: 1.05rem; }
-.final-cta-actions { justify-content: center; margin-top: 20px; }
-.final-cta-note { font-size: .86rem; color: var(--heading); opacity: .75; margin-top: 14px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 780px;
+  margin: 28px auto 0;
+}
+.contact-card {
+  background: #fff;
+  border-radius: var(--radius-m);
+  padding: 26px 20px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+.contact-card h3 { margin-bottom: 0; }
+.contact-card p { font-size: .88rem; color: var(--schiefer); margin-bottom: 0; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--limette); color: #fff; padding: 48px 0 32px; }
@@ -689,6 +760,7 @@ img { max-width: 100%; display: block; }
   .leistung-grid { grid-template-columns: repeat(2, 1fr); }
   .zielgruppen-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
+  .vertrauen-quote { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 760px) {
@@ -698,6 +770,7 @@ img { max-width: 100%; display: block; }
   .section { padding: 52px 0; }
   .header-actions { gap: 8px; }
   .btn-small { padding: 9px 14px; font-size: .85rem; }
+  .contact-grid { grid-template-columns: 1fr; max-width: 320px; }
 }
 
 @media (max-width: 480px) {

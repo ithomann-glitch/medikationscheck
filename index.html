@@ -114,7 +114,7 @@
           <img class="problem-photo" src="assets/img/problem-photo.jpg" alt="Medikationsplan mit mehreren Tablettenblistern">
         </div>
         <div class="problem-copy">
-          <p class="eyebrow">Das eigentliche Thema</p>
+          <p class="eyebrow">Kennen Sie das?</p>
           <h2 class="problem-question">5&nbsp;Medikamente.<br><span class="problem-question-highlight" id="problem-slider">Verträgt sich das eigentlich alles?</span></h2>
           <p class="section-sub">Mehrere Erkrankungen, verschiedene Fachärzt:innen, mehrere Rezepte – Fragen wie diese kennen viele unserer Patient:innen. Ganz normal, und genau dafür sind wir da.</p>
         </div>
@@ -127,21 +127,37 @@
           <div class="leistung-icon"><img class="icon-scribble" src="assets/img/icons/reagenzglas.svg" alt=""></div>
           <h3>Wechselwirkungen</h3>
           <p>Wir prüfen, ob sich Ihre Medikamente gegenseitig beeinflussen können.</p>
+          <button type="button" class="leistung-toggle" aria-expanded="false">Mehr erfahren<span class="leistung-toggle-icon">+</span></button>
+          <div class="leistung-detail">
+            <p>Manche Wirkstoffe verstärken oder schwächen sich gegenseitig ab, wenn sie zusammen eingenommen werden – das kann die Wirkung verändern oder Nebenwirkungen begünstigen. Wir prüfen Ihre gesamte Medikation mit einer pharmazeutischen Interaktionsdatenbank und besprechen relevante Wechselwirkungen mit Ihnen im Gespräch.</p>
+          </div>
         </div>
         <div class="leistung-card">
           <div class="leistung-icon"><img class="icon-scribble" src="assets/img/icons/tablettenblister.svg" alt=""></div>
           <h3>Doppelmedikationen</h3>
           <p>Wir erkennen, wenn Wirkstoffe unbeabsichtigt doppelt verordnet wurden.</p>
+          <button type="button" class="leistung-toggle" aria-expanded="false">Mehr erfahren<span class="leistung-toggle-icon">+</span></button>
+          <div class="leistung-detail">
+            <p>Wenn mehrere Ärzt:innen unabhängig voneinander verordnen, kann es passieren, dass derselbe Wirkstoff unter verschiedenen Handelsnamen zweimal verschrieben wird – oft unbemerkt. Wir gleichen alle Ihre Medikamente ab und weisen Sie auf mögliche Doppelverordnungen hin.</p>
+          </div>
         </div>
         <div class="leistung-card">
           <div class="leistung-icon"><img class="icon-scribble" src="assets/img/icons/tablette.svg" alt=""></div>
           <h3>Anwendungsprobleme</h3>
           <p>Wir klären offene Fragen zur richtigen Einnahme – z.&nbsp;B. Zeitpunkt und Dosierung.</p>
+          <button type="button" class="leistung-toggle" aria-expanded="false">Mehr erfahren<span class="leistung-toggle-icon">+</span></button>
+          <div class="leistung-detail">
+            <p>Ob vor oder nach dem Essen, morgens oder abends, ganz oder geteilt – die richtige Einnahme entscheidet oft über die Wirksamkeit. Wir gehen jedes Medikament mit Ihnen durch und klären, worauf Sie im Alltag konkret achten sollten.</p>
+          </div>
         </div>
         <div class="leistung-card">
           <div class="leistung-icon"><img class="icon-scribble" src="assets/img/icons/vertrag-check.svg" alt=""></div>
           <h3>Aktualisierter Plan</h3>
           <p>Sie erhalten einen übersichtlichen, aktuellen Medikationsplan zum Mitnehmen.</p>
+          <button type="button" class="leistung-toggle" aria-expanded="false">Mehr erfahren<span class="leistung-toggle-icon">+</span></button>
+          <div class="leistung-detail">
+            <p>Der Plan listet alle Ihre Medikamente mit Wirkstoff, Dosierung und Einnahmezeitpunkt übersichtlich auf einer Seite – zum Mitnehmen für sich selbst, Angehörige oder den nächsten Arztbesuch. So haben alle Beteiligten jederzeit den vollen Überblick.</p>
+          </div>
         </div>
       </div>
       <p class="leistung-note">Wir betrachten Ihre gesamte Medikation – inklusive relevanter Selbstmedikation wie rezeptfreier Präparate und Nahrungsergänzungsmittel.</p>
@@ -328,9 +344,16 @@
         <h2>Durchgeführt von Apotheker:innen mit pharmazeutischer Qualifikation</h2>
         <p>Die Medikationsberatung ist eine anerkannte pharmazeutische Dienstleistung. Unsere Apotheker:innen betrachten Ihre gesamte Medikation strukturiert und besprechen mit Ihnen verständlich, worauf es ankommt – ohne Fachchinesisch.</p>
       </div>
+      <div class="vertrauen-quote">
+        <img class="vertrauen-quote-photo" src="assets/img/vertrauen-quote.jpg" alt="Christian Berger, Apotheker in einer sk-Apotheke">
+        <div>
+          <p class="vertrauen-quote-text">„Gerade wer viele Medikamente gleichzeitig einnimmt, möchte sich sicher fühlen. Deshalb nehmen wir uns Zeit, hören genau zu und erklären alles in Ruhe – ganz ohne Fachchinesisch.“</p>
+          <p class="vertrauen-quote-author">Christian Berger<span>Apotheker in Ihrer sk-Apotheke</span></p>
+        </div>
+      </div>
       <div class="vertrauen-facts">
         <div class="vertrauen-fact">
-          <img class="icon-scribble icon-scribble-md" src="assets/img/icons/kostenlos.svg" alt="">
+          <img class="icon-scribble icon-scribble-md" src="assets/img/icons/preis-tag.svg" alt="">
           <strong>Kostenlos</strong>
           <span>für gesetzlich Versicherte</span>
         </div>
@@ -396,12 +419,24 @@
   <section class="section final-cta" id="kontakt">
     <div class="container final-cta-inner">
       <h2>Passen Ihre Medikamente zusammen?</h2>
-      <p>Finden Sie es heraus – kostenlos und unverbindlich.</p>
-      <div class="hero-actions final-cta-actions">
-        <a href="https://termin.skapo.de" target="_blank" rel="noopener" class="btn btn-primary btn-large">Termin vereinbaren auf termin.skapo.de</a>
-        <a href="tel:08000513024" class="btn btn-ghost">Oder anrufen: 0800 0 513024</a>
+      <p>Finden Sie es heraus – kostenlos und unverbindlich. So erreichen Sie uns:</p>
+      <div class="contact-grid">
+        <a href="https://termin.skapo.de" target="_blank" rel="noopener" class="contact-card">
+          <img class="icon-scribble icon-scribble-md" src="assets/img/icons/online.svg" alt="">
+          <h3>Online</h3>
+          <p>Termin buchen auf<br>termin.skapo.de</p>
+        </a>
+        <a href="tel:08000513024" class="contact-card">
+          <img class="icon-scribble icon-scribble-md" src="assets/img/icons/telefon.svg" alt="">
+          <h3>Telefonisch</h3>
+          <p>0800 0 513024<br>kostenfrei erreichbar</p>
+        </a>
+        <div class="contact-card">
+          <img class="icon-scribble icon-scribble-md" src="assets/img/icons/vor-ort.svg" alt="">
+          <h3>Vor Ort</h3>
+          <p>Ganz unkompliziert<br>in Ihrer sk-Apotheke</p>
+        </div>
       </div>
-      <p class="final-cta-note">Alternativ auch ganz unkompliziert vor Ort in Ihrer sk-Apotheke.</p>
     </div>
   </section>
 
