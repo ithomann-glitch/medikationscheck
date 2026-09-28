@@ -581,6 +581,20 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-card);
   position: relative;
 }
+.step:not(:last-child)::after {
+  content: "→";
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: -24px;
+  transform: translateX(50%);
+  font-size: 1.2rem;
+  color: var(--avocado);
+  opacity: .5;
+}
+@media (min-width: 981px) {
+  .step:not(:last-child)::after { display: block; }
+}
 .step-number {
   display: inline-flex;
   align-items: center;
@@ -592,6 +606,21 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-head);
   font-weight: 800;
   margin-bottom: 14px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.step-duration {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  background: rgba(19, 106, 33, .09);
+  color: var(--avocado);
+  font-weight: 700;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  padding: 5px 10px;
+  border-radius: 999px;
 }
 .step p { font-size: .9rem; margin-bottom: 0; }
 .step-cta { margin-top: 16px; }
