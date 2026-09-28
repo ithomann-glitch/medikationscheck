@@ -626,7 +626,12 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
 }
 .step p { font-size: .9rem; margin-bottom: 0; }
-.step-cta { margin-top: auto; padding-top: 16px; }
+.step-cta {
+  margin-top: auto;
+  align-self: stretch;
+  justify-content: center;
+}
+.step > p:last-of-type { margin-bottom: 16px; }
 
 /* ---------- Vertrauen ---------- */
 /* Both rows (quote and facts) share the same container width so their
