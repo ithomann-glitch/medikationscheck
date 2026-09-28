@@ -433,7 +433,7 @@ img { max-width: 100%; display: block; }
 }
 .zg-badge {
   position: absolute;
-  top: 58px;
+  top: 10px;
   left: 14px;
   display: inline-flex;
   align-items: center;
