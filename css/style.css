@@ -283,11 +283,12 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Anchored left (toward the pharmacist) rather than centered: if the
-     section ever gets taller than it is wide relative to the photo and
-     object-fit:cover has to crop left/right, this keeps the crop away
-     from the patient's face on the right instead of zooming in on it. */
-  object-position: 15% 22%;
+  /* Anchored toward the top-left: both faces in the source photo sit low
+     enough that the hero-copy card would otherwise cover them (the image
+     file itself has extra blurred space padded onto its bottom for this
+     reason - see the image processing note where hero-bg.jpg was
+     generated). Anchoring near the top keeps both faces above the card. */
+  object-position: 30% 5%;
   z-index: 0;
 }
 .hero .container { position: relative; z-index: 1; padding-bottom: 64px; }
