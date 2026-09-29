@@ -591,11 +591,20 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   align-items: flex-start;
 }
+/* Cards deepen from neutral grey to green step by step, reinforcing
+   progress toward completion; the connector line picks up the same
+   honigmelone tone at full strength so it reads as the thread tying
+   the shades together. */
+.step:nth-child(1) { background: var(--morgentau); }
+.step:nth-child(2) { background: rgba(199, 223, 125, .3); }
+.step:nth-child(3) { background: rgba(199, 223, 125, .5); }
+.step:nth-child(4) { background: rgba(199, 223, 125, .7); }
 .step:not(:last-child)::after {
   content: "";
   display: none;
   position: absolute;
-  top: 44px;
+  top: 50%;
+  transform: translateY(-50%);
   right: -24px;
   width: 24px;
   height: 2px;
