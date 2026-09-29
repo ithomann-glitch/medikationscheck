@@ -298,12 +298,11 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   background: #fff;
   border-radius: var(--radius-l);
-  padding: 40px clamp(24px, 4vw, 48px);
-  max-width: 720px;
+  padding: 32px clamp(24px, 4vw, 48px);
   margin-top: clamp(-130px, -9vw, -70px);
   box-shadow: 0 30px 60px -14px rgba(44, 46, 43, .25);
 }
-.hero-sub { font-size: 1.12rem; }
+.hero-sub { font-size: 1.12rem; max-width: 640px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0 24px; }
 .hero-trust {
   list-style: none;
