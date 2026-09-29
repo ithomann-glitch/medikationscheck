@@ -278,7 +278,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-media {
   width: 100%;
-  aspect-ratio: 1.8596 / 1;
+  aspect-ratio: 1.45 / 1;
   overflow: hidden;
 }
 .hero-photo {
@@ -293,13 +293,11 @@ img { max-width: 100%; display: block; }
   background: #fff;
   border-radius: var(--radius-l);
   padding: 32px clamp(24px, 4vw, 48px);
-  /* Pulls the card up over the image so it sits on the lower portion of
-     the photo (below both faces); -28% of the hero's width equals the
-     image's own height (ratio-derived), so this places the card at
-     ~48% down the image, then the +95px nudges it further down. Card
-     height is content-driven, so the actual overlap flexes with it -
-     see .hero's padding-bottom for the fixed gap left below the card. */
-  margin-top: calc(-28% + 95px);
+  /* Pulls the card up over the image so it's fully contained within the
+     photo (below both faces, bottom edge still inside the image at any
+     width) instead of hanging off the bottom. -38% of the hero's width
+     reserves roughly the image's upper 45% for the photo alone. */
+  margin-top: -46%;
   box-shadow: 0 30px 60px -14px rgba(44, 46, 43, .25);
 }
 .hero-sub { font-size: 1.12rem; }
