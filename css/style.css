@@ -288,7 +288,7 @@ img { max-width: 100%; display: block; }
      file itself has extra blurred space padded onto its bottom for this
      reason - see the image processing note where hero-bg.jpg was
      generated). Anchoring near the top keeps both faces above the card. */
-  object-position: 30% 5%;
+  object-position: 30% 0%;
   z-index: 0;
 }
 .hero .container { position: relative; z-index: 1; padding-bottom: 64px; }
@@ -566,7 +566,7 @@ img { max-width: 100%; display: block; }
 .check-back:hover { color: var(--erdbeere); }
 
 /* ---------- Ablauf ---------- */
-.ablauf { background: var(--morgentau); }
+.ablauf { background: #fff; }
 .steps {
   list-style: none;
   margin: 0; padding: 0;
