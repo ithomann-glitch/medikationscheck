@@ -144,6 +144,7 @@ img { max-width: 100%; display: block; }
   padding-bottom: 14px;
   position: relative;
 }
+.logo { flex-shrink: 0; }
 .logo img { height: 44px; width: auto; }
 
 .header-actions {
@@ -873,4 +874,5 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
 @media (max-width: 480px) {
   .header-phone span { display: none; }
   .header-phone { padding: 6px; }
+  .logo img { height: 34px; }
 }
