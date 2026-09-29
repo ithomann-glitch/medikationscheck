@@ -272,7 +272,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: clamp(640px, 90vh, 920px);
+  min-height: clamp(850px, 95vh, 980px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
