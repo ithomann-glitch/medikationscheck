@@ -273,7 +273,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  background: var(--honigmelone);
+  background: #fff;
 }
 .hero-media {
   width: 100%;
