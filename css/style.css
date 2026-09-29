@@ -591,20 +591,6 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   align-items: flex-start;
 }
-.step:not(:last-child)::after {
-  content: "→";
-  display: none;
-  position: absolute;
-  top: 18px;
-  right: -24px;
-  transform: translateX(50%);
-  font-size: 1.2rem;
-  color: var(--avocado);
-  opacity: .5;
-}
-@media (min-width: 981px) {
-  .step:not(:last-child)::after { display: block; }
-}
 .step-number {
   display: inline-flex;
   align-items: center;
