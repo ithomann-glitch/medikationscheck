@@ -277,19 +277,14 @@ img { max-width: 100%; display: block; }
 }
 .hero-media {
   width: 100%;
-  aspect-ratio: 1.65 / 1;
+  aspect-ratio: 3.2 / 1;
   overflow: hidden;
 }
 .hero-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Top-anchored: the image is wider than its native ratio once cropped
-     to this banner shape, so all of the crop comes off the bottom (table/
-     hands), never the top - both faces stay fully in frame regardless of
-     viewport width. Height is driven purely by width (aspect-ratio), never
-     by viewport height, so this holds at any window size. */
-  object-position: 50% 0%;
+  object-position: 50% 48%;
   display: block;
 }
 .hero .container { position: relative; padding-bottom: 0; }
