@@ -278,7 +278,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-media {
   width: 100%;
-  aspect-ratio: 1.45 / 1;
+  aspect-ratio: 3.3 / 1;
   overflow: hidden;
 }
 .hero-photo {
@@ -288,20 +288,25 @@ img { max-width: 100%; display: block; }
   object-position: 50% 50%;
   display: block;
 }
+/* Margin-top lives on .container (not .hero-copy) so the percentage
+   resolves against .hero's full, unpadded width - matching
+   .hero-media's own width so the pull-up stays a constant fraction of
+   the image's height at any viewport (.hero-copy's containing block,
+   .container, is narrower once its max-width/padding apply, which
+   would otherwise make the overlap drift at different widths). */
+.hero .container {
+  margin-top: -18%;
+}
 .hero-copy {
   position: relative;
   background: #fff;
   border-radius: var(--radius-l);
-  padding: 32px clamp(24px, 4vw, 48px);
-  /* Pulls the card up over the image so it's fully contained within the
-     photo (below both faces, bottom edge still inside the image at any
-     width) instead of hanging off the bottom. -38% of the hero's width
-     reserves roughly the image's upper 45% for the photo alone. */
-  margin-top: -46%;
+  padding: 20px clamp(24px, 4vw, 40px);
   box-shadow: 0 30px 60px -14px rgba(44, 46, 43, .25);
 }
-.hero-sub { font-size: 1.12rem; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0 24px; }
+.hero-copy h1 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-bottom: .35em; }
+.hero-sub { font-size: 1rem; margin-bottom: .6em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0 14px; }
 .hero-trust {
   list-style: none;
   padding: 0;
@@ -844,7 +849,7 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .hero-copy { margin-top: -56px; }
+  .hero .container { margin-top: -56px; }
   .problem-intro { grid-template-columns: 1fr; gap: 28px; }
   .problem-media { order: -1; max-width: 460px; margin: 0 auto; width: 100%; }
   .problem-photo { min-height: 260px; }
