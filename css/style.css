@@ -271,7 +271,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--guave);
+  background: var(--honigmelone);
   padding: 56px 0 64px;
 }
 .hero-grid {
@@ -862,7 +862,7 @@ a.contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3
   .btn-small { padding: 9px 14px; font-size: .85rem; }
   .contact-grid { grid-template-columns: 1fr; max-width: 320px; }
   .branch-results { grid-template-columns: 1fr; }
-  .zg-photo { aspect-ratio: 16 / 9; object-position: 50% 100%; }
+  .zg-photo { aspect-ratio: 16 / 9; object-position: 50% 75%; }
 }
 
 @media (max-width: 480px) {
