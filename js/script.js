@@ -93,15 +93,12 @@
       var value = btn.getAttribute('data-value');
       answers[step] = value;
 
-      if (value === 'no' && step !== '3') {
+      if (value === 'no') {
         history.push('result-no');
         showStep('result-no');
         return;
       }
 
-      // Die Beratung ist sowohl für gesetzlich als auch für privat
-      // Versicherte kostenlos, daher führt Frage 3 in jedem Fall zum
-      // gleichen positiven Ergebnis.
       var next;
       if (step === '1') next = '2';
       else if (step === '2') next = '3';

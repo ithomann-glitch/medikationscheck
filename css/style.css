@@ -390,7 +390,7 @@ img { max-width: 100%; display: block; }
 .leistung-icon {
   width: 64px; height: 64px;
   border-radius: 16px;
-  background: var(--honigmelone);
+  background: var(--limette);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 14px;
 }
