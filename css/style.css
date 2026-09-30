@@ -377,7 +377,7 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 14px;
 }
-.leistung-icon .icon-scribble { width: 38px; height: 38px; }
+.leistung-icon .icon-scribble { width: 52px; height: 52px; }
 .leistung-card > p { font-size: .92rem; margin-bottom: 12px; color: var(--heading); }
 .leistung-toggle {
   display: inline-flex;
