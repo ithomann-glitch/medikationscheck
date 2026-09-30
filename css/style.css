@@ -329,11 +329,9 @@ img { max-width: 100%; display: block; }
 
 .problem-intro {
   margin-bottom: 28px;
+  text-align: center;
 }
-.problem-copy {
-  max-width: 760px;
-}
-.problem-copy .section-sub { margin: 0 0 22px; }
+.problem-copy .section-sub { margin: 0 auto 22px; }
 .problem-question {
   font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   line-height: 1.22;
