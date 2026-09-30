@@ -274,7 +274,7 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative;
   background: #fff;
-  padding-bottom: 100px;
+  padding-bottom: 56px;
   overflow: hidden;
 }
 .hero-media {
@@ -296,9 +296,10 @@ img { max-width: 100%; display: block; }
    .container, is narrower once its max-width/padding apply, which
    would otherwise make the overlap drift at different widths). Kept
    short enough that the card never rises past the people's faces in
-   the photo above it. */
+   the photo above it, but deep enough that the card's bottom edge
+   still lands on the photo instead of hanging off it. */
 .hero .container {
-  margin-top: -14%;
+  margin-top: -19%;
 }
 .hero-copy {
   position: relative;
