@@ -93,18 +93,19 @@
       var value = btn.getAttribute('data-value');
       answers[step] = value;
 
-      // Frage 3 (Versicherungsstatus) entscheidet nur, ob die Beratung
-      // kostenlos ist - privat Versicherte können trotzdem buchen.
       if (value === 'no' && step !== '3') {
         history.push('result-no');
         showStep('result-no');
         return;
       }
 
+      // Die Beratung ist sowohl für gesetzlich als auch für privat
+      // Versicherte kostenlos, daher führt Frage 3 in jedem Fall zum
+      // gleichen positiven Ergebnis.
       var next;
       if (step === '1') next = '2';
       else if (step === '2') next = '3';
-      else next = value === 'yes' ? 'result-yes' : 'result-private';
+      else next = 'result-yes';
 
       history.push(next);
       showStep(next);
@@ -254,7 +255,7 @@
           '<div>' +
           '<div class="branch-result-title">' +
           '<span class="branch-result-name">' + branch.name + '</span>' +
-          (i === 0 ? '<span class="branch-result-badge">Näheste PLZ</span>' : '') +
+          (i === 0 ? '<span class="branch-result-badge">Nächstgelegene Filiale</span>' : '') +
           '</div>' +
           '<div class="branch-result-address">' + branch.address + '</div>' +
           '</div>' +
