@@ -430,7 +430,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: rgba(255,255,255,.94);
+  background: #fff;
   color: var(--heading);
   font-weight: 700;
   font-size: .82rem;
